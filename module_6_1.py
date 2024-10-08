@@ -8,31 +8,21 @@ class Animal:
         self.name = name
 
     def eat(self, food):
-        if food.edible:
+        if not food.edible:
+            print(f'{self.name} не стал есть {food.name}')
+            self.alive = False
+        else:
             print(f'{self.name} съел {food.name}')
             self.fed = True
 
 
 class Mammal(Animal):
-
-    def eat(self, food):
-        if not food.edible:
-            print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
-        else:
-            print(f'{self.name} съел {food.name}')
-            self.fed = True
+    pass
 
 
 class Predator(Animal):
+    pass
 
-    def eat(self, food):
-        if not food.edible:
-            print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
-        else:
-            print(f'{self.name} съел {food.name}')
-            self.fed = True
 
 
 # Растения
