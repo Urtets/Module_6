@@ -7,7 +7,7 @@ SCREEN_TITLE = "Pong Game"
 
 class Ball(arcade.Sprite):
     def __init__(self):
-        super().__init__('ball.png', 0.5)
+        super().__init__('ball_1png', 0.5)
         self.change_x = 2
         self.change_y = 2
 
@@ -23,9 +23,10 @@ class Ball(arcade.Sprite):
         if self.bottom <= 0:
             self.change_y = -self.change_y
 
+
 class Bar(arcade.Sprite):
     def __init__(self):
-        super().__init__('racket1.png', 0.2)
+        super().__init__('racket_1.png', 0.2)
 
     def update(self):
         self.center_x += self.change_x
@@ -33,6 +34,7 @@ class Bar(arcade.Sprite):
             self.right = SCREEN_WIDTH
         if self.left <= 0:
             self.left = 0
+
 
 class Game(arcade.Window):
     def __init__(self, width, height, title):
@@ -68,7 +70,6 @@ class Game(arcade.Window):
     def on_key_release(self, symbol: int, modifiers: int):
         if symbol == arcade.key.RIGHT or symbol == arcade.key.LEFT:
             self.bar.change_x = 0
-
 
 
 if __name__ == '__main__':
